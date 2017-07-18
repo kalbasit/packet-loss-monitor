@@ -41,7 +41,7 @@ func main() {
 			lostPackets = append(lostPackets, i)
 		}
 		lastPing = pkt.Seq
-		if pkt.Seq%10 == 0 {
+		if pkt.Seq > 0 && pkt.Seq%10 == 0 {
 			fmt.Printf("lost packets: %v\n", lostPackets)
 		}
 	}
